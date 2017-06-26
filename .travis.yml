@@ -11,10 +11,10 @@ install:
   - autoreconf -W portability -visf
 
 before_script:
-  - ./test/ci/configure.sh
+  - ./test/ci/setup.sh
 
 script:
-  - make
+  - ./test/ci/build.sh
 
 env:
   matrix:
