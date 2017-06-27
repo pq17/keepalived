@@ -7,4 +7,4 @@ echo Configuring with: $KEEPALIVED_CONFIG_ARGS
     exit 1
 }
 
-make || cat config.log
+make
