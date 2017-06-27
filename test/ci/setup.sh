@@ -18,5 +18,5 @@ sudo apt -qq install libsnmp-dev iptables-dev libipset-dev libnfnetlink-dev libn
 # Update kernel headers to match kernel
 pushd /tmp
 wget http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux-libc-dev_4.4.0-81.104_amd64.deb
-dpkg --install linux-libc-dev_4.4.0-81.104_amd64.deb
+sudo dpkg --install linux-libc-dev_4.4.0-81.104_amd64.deb
 popd
