@@ -22,6 +22,10 @@
 
 #include "config.h"
 
+#ifdef _LIBNL_DYNAMIC_
+#include "libnl_link.h"
+#endif
+
 /* global include */
 #include <stdio.h>
 #include <stdlib.h>
@@ -41,9 +45,6 @@
 /* local include */
 #ifdef _WITH_LVS_
 #include "check_api.h"
-#endif
-#ifdef _LIBNL_DYNAMIC_
-#include "libnl_link.h"
 #endif
 #include "keepalived_netlink.h"
 #ifdef _HAVE_VRRP_VMAC_
