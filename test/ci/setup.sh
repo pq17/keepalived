@@ -12,6 +12,8 @@ cat /etc/*release
 # Packages installed
 sudo apt list --installed
 
+sudo apt-get -qq update
+
 sudo apt -qq install libsnmp-dev iptables-dev libipset-dev libnfnetlink-dev libnl-3-dev libnl-genl-3-dev libnl-route-3-dev libssl-dev
 
 sudo apt -qq upgrade linux-libc-dev
