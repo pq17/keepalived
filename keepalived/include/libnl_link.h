@@ -28,7 +28,7 @@
 
 #ifdef _HAVE_LINUX_NET_IF_H_COLLISION_
 /* The following is a horrible workaround. There was a longstanding problem with symbol
- * collision including both net/if.h and netlink/route/link.h.
+ * collision including both net/if.h and linux/if.h.
  *
  * See: https://github.com/thom311/libnl/commit/50a76998ac36ace3716d3c979b352fac73cfc80a
  *
