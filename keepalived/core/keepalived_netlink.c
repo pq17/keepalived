@@ -42,9 +42,6 @@
 #ifdef _WITH_LVS_
 #include "check_api.h"
 #endif
-#ifdef _LIBNL_DYNAMIC_
-#include "libnl_link.h"
-#endif
 #include "keepalived_netlink.h"
 #ifdef _HAVE_VRRP_VMAC_
 #include "vrrp_vmac.h"
@@ -56,6 +53,9 @@
 #include "bitops.h"
 #if !HAVE_DECL_SOCK_NONBLOCK
 #include "old_socket.h"
+#endif
+#ifdef _LIBNL_DYNAMIC_
+#include "libnl_link.h"
 #endif
 
 /* Default values */
