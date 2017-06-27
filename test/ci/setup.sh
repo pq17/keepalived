@@ -18,7 +18,8 @@ sudo apt -qq install libsnmp-dev iptables-dev libipset-dev libnfnetlink-dev libn
 # Update kernel headers to match kernel
 CURDIR=$(pwd)
 cd /tmp
-KER_VER=$(apt list --installed | grep "^linux-image-[0-9]" | sed -e "s/.*,now //" -e "s/~.*//")
+KER_VER=$(sudo apt list --installed | grep "^linux-image-[0-9]" | sed -e "s/.*,now //" -e "s/~.*//")
+echo KER_VER is $KER_VER
 wget http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux-libc-dev_$(KER_VER)_amd64.deb
 sudo dpkg --install linux-libc-dev_$(KER_VER)_amd64.deb
 rm linux-libc-dev_$(KER_VER)_amd64.deb
