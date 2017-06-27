@@ -14,6 +14,8 @@ sudo apt list --installed
 
 sudo apt -qq install libsnmp-dev iptables-dev libipset-dev libnfnetlink-dev libnl-3-dev libnl-genl-3-dev libnl-route-3-dev libssl-dev
 
+sudo apt -qq upgrade linux-libc-dev
+
 echo; echo /usr/include/linux/ip_vs.h; echo ===================
 cat /usr/include/linux/ip_vs.h
 
