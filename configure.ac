@@ -821,7 +821,24 @@ AC_COMPILE_IFELSE([AC_LANG_SOURCE([[
   ],
   [
     AC_MSG_RESULT([yes])
-    AC_DEFINE([_HAVE_LINUX_NET_IF_H_COLLISION_], [ 1 ], [Define to 1 if have libiptc/libiptc.h linux/if.h and net/if.h namespace collision])
+    AC_DEFINE([_HAVE_LIBIPTC_LINUX_NET_IF_H_COLLISION_], [ 1 ], [Define to 1 if have libiptc/libiptc.h linux/if.h and net/if.h namespace collision])
+    add_build_opt([LIBIPTC_LINUX_NET_IF_H_COLLISION])
+  ])
+CPPFLAGS="$SAV_CPPFLAGS"
+
+AC_MSG_CHECKING([for linux/if.h and net/if.h namespace collision])
+SAV_CPPFLAGS="$CPPFLAGS"
+CPPFLAGS="$CPPFLAGS $kernelinc"
+AC_COMPILE_IFELSE([AC_LANG_SOURCE([[
+    #include <net/if.h>
+    #include <linux/if.h>
+  ]])],
+  [
+    AC_MSG_RESULT([no])
+  ],
+  [
+    AC_MSG_RESULT([yes])
+    AC_DEFINE([_HAVE_LINUX_NET_IF_H_COLLISION_], [ 1 ], [Define to 1 if have linux/if.h and net/if.h namespace collision])
     add_build_opt([LINUX_NET_IF_H_COLLISION])
   ])
 CPPFLAGS="$SAV_CPPFLAGS"

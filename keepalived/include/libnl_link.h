@@ -26,10 +26,9 @@
 #endif
 #if defined _WITH_VRRP_ && defined _HAVE_LIBNL3_ && defined _HAVE_IPV4_DEVCONF_
 
-#ifdef _HAVE_IF_H_LINK_H_COLLISION_
+#ifdef _HAVE_LINUX_NET_IF_H_COLLISION_
 /* The following is a horrible workaround. There was a longstanding problem with symbol
- * collision including both net/if.h and netlink/route/link.h, due to the latter
- * including linux/if.h unnecessarily.
+ * collision including both net/if.h and netlink/route/link.h.
  *
  * See: https://github.com/thom311/libnl/commit/50a76998ac36ace3716d3c979b352fac73cfc80a
  *

@@ -3280,6 +3280,7 @@ AM_BACKSLASH='\'
 
 
 
+
 if test "x$ac_cv_env_PKG_CONFIG_set" != "xset"; then
 	if test -n "$ac_tool_prefix"; then
   # Extract the first word of "${ac_tool_prefix}pkg-config", so it can be a program name with args.
@@ -8860,6 +8861,35 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
 
     #include <libiptc/libiptc.h>
+
+_ACEOF
+if ac_fn_c_try_compile "$LINENO"; then :
+
+    { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+$as_echo "no" >&6; }
+
+else
+
+    { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+$as_echo "yes" >&6; }
+
+$as_echo "#define _HAVE_LIBIPTC_LINUX_NET_IF_H_COLLISION_  1 " >>confdefs.h
+
+    BUILD_OPTIONS="$BUILD_OPTIONS LIBIPTC_LINUX_NET_IF_H_COLLISION"
+
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
+CPPFLAGS="$SAV_CPPFLAGS"
+
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for linux/if.h and net/if.h namespace collision" >&5
+$as_echo_n "checking for linux/if.h and net/if.h namespace collision... " >&6; }
+SAV_CPPFLAGS="$CPPFLAGS"
+CPPFLAGS="$CPPFLAGS $kernelinc"
+cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+    #include <net/if.h>
+    #include <linux/if.h>
 
 _ACEOF
 if ac_fn_c_try_compile "$LINENO"; then :

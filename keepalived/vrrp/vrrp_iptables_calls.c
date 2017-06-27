@@ -22,7 +22,7 @@
 
 #include "config.h"
 
-#ifdef _HAVE_LINUX_NET_IF_H_COLLISION_
+#ifdef _HAVE_LIBIPTC_LINUX_NET_IF_H_COLLISION_
 /* The following is a horrible workaround. Linux 4.5 introduced a namespace
  * collision when including libiptc/libiptc.h due to both net/if.h and linux/if.h
  * being included.
