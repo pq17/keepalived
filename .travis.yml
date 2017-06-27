@@ -4,8 +4,8 @@ git:
 language: c
 compiler: gcc
 os: linux
-dist: trusty
-sudo: require
+# dist: trusty
+# sudo: require
 
 install:
   - autoreconf -W portability -visf
